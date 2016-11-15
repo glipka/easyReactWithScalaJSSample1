@@ -1,0 +1,6 @@
+[info] Loading project definition from C:\georges\projets\scalajs\projetScalaJs3\project
+[info] Set current project to projetScalaJs3 (in build file:/C:/georges/projets/scalajs/projetScalaJs3/)
+[error] Not a valid command: fastOptJs (similar: iflast)
+[error] Not a valid key: fastOptJs (similar: fastOptJS, testOptions, fullOptJS)
+[error] fastOptJs
+[error]          ^
