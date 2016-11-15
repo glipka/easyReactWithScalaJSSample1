@@ -1,2 +1,2 @@
 # easyReactWithScalaJSSample1
-samples easysReact with 
+samples easysReactWithScala and reactRouter, Redux, ReduxForm
