@@ -15,31 +15,31 @@
 */
 package examples.basicRouter.containers
 
-import react._
-import redux._
-import redux.Redux._
-import reactRedux._
-import reactRedux.ReactRedux._
+import com.glipka.easyReactJS.react._
+import com.glipka.easyReactJS.redux._
+import com.glipka.easyReactJS.redux.Redux._
+import com.glipka.easyReactJS.reactRedux._
+import com.glipka.easyReactJS.reactRedux.ReactRedux._
 
 import org.scalajs.dom._
 import scalajs.js
 import scalajs.js._
-import react.ComponentClass
+import com.glipka.easyReactJS.react.ComponentClass
 import scala.scalajs.js.annotation.JSExport
 import scala.scalajs.js.JSApp
 
 import scala.scalajs.js.annotation.ScalaJSDefined
-import react.ReactTypedConstructor
+import com.glipka.easyReactJS.react.ReactTypedConstructor
 import scala.scalajs.js.annotation.JSExportAll
-import reactRouter.ReactRouter._
-import reactRouter._
-import react.xml.XmlToCreatElement
+import com.glipka.easyReactJS.reactRouter.ReactRouter._
+import com.glipka.easyReactJS.reactRouter._
+import com.glipka.easyReactJS.react.xml.XmlToCreatElement
  
  
 import examples.basicRouter.store._
 import examples.basicRouter.redux.components._
-import reduxForm._
-import reduxForm.ReduxForm._
+import com.glipka.easyReactJS.reduxForm._
+import com.glipka.easyReactJS.reduxForm.ReduxForm._
 import examples.basicRouter.redux.newActions._
 
 @JSExport("App3")

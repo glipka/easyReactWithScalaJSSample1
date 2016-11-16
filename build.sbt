@@ -2,7 +2,6 @@
 
 lazy val root = (project in file(".")).enablePlugins(ScalaJSPlugin,SbtWeb)
  
-//lazy val root = (project in file(".")).enablePlugins(ScalaJSPlugin)
  
 
 name := "easyReactWithScalaJSSample1"

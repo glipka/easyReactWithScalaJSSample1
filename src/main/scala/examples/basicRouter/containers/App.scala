@@ -14,19 +14,18 @@
 # limitations under the License.
 */
 package examples.basicRouter.containers
-import react._
+import com.glipka.easyReactJS.react._
 import org.scalajs.dom._
 import scalajs.js
 import scalajs.js._
 import scala.scalajs.js.annotation.ScalaJSDefined
 import scala.scalajs.js.JSConverters._
-import reactRouter.ReactRouter._
+import com.glipka.easyReactJS.reactRouter.ReactRouter._
 
-import react.xml.XmlToCreatElement
-import reactBootstrap.ReactBootstrap._
-import reactBootstrap._
-import reactRouterBootstrap._
-import reactRouterBootstrap.ReactRouterBootstrap._
+import com.glipka.easyReactJS.react.xml.XmlToCreatElement
+import com.glipka.easyReactJS.reactBootstrap.ReactBootstrap._
+import com.glipka.easyReactJS.reactBootstrap._
+import com.glipka.easyReactJS.reactRouterBootstrap.ReactRouterBootstrap._
 import scala.scalajs.js.UndefOr
 import org.scalajs.dom.raw.HTMLInputElement
 

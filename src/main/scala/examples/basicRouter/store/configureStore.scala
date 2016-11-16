@@ -16,10 +16,10 @@
 package examples.basicRouter.store
 import scala.scalajs.js
 import scala.scalajs.js.annotation.ScalaJSDefined
-import redux.Redux._
-import redux._
-import reduxForm._
-import reduxForm.ReduxForm
+import com.glipka.easyReactJS.redux.Redux._
+import com.glipka.easyReactJS.redux._
+import com.glipka.easyReactJS.reduxForm._
+import com.glipka.easyReactJS.reduxForm.ReduxForm
 import examples.basicRouter.redux.reducer.ReducerFriends
 import examples.basicRouter.redux.reducer.ReducerAccount
 import js.Dynamic.literal
