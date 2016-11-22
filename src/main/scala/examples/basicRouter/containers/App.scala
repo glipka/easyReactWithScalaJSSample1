@@ -61,13 +61,10 @@ class App1(val props: JSPropsApp[Any]) extends Component[JSPropsApp[Any], JSStat
   @XmlToCreatElement(true)
   override def render(): Any = {
     <div>
-      <h1>*** Liste des Applications ***</h1>
+      <h1>*** samples Redux Form ***</h1>
       <ul role="nav">
         <li><IndexLink to="/" activeStyle={ red }>Home</IndexLink></li>
-        <li><Link to="/boostrapComponents" activeStyle={ red }>BootstrapComponents</Link></li>
-        <li><Link to="/json" activeStyle={ red }>Json1 Sample</Link></li>
-        <li><Link to="/sampleForm" activeStyle={ red }>Redux-Form : sampleForm</Link></li>
-        <li><Link to="/submitValidationForm" activeStyle={ red }>Redux-Form : submitValidationForm</Link></li>
+         <li><Link to="/submitValidationForm" activeStyle={ red }>Redux-Form : submitValidationForm</Link></li>
         <li><Link to="/syncValidationForm" activeStyle={ red }>Redux-Form : syncValidationForm</Link></li>
         <li><Link to="/asyncValidateForm" activeStyle={ red }>Redux-Form : AsyncValidateForm</Link></li>
         <li><Link to="/initializeFromStateForm" activeStyle={ red }>Redux-Form : initializeFromStateForm</Link></li>
@@ -75,9 +72,8 @@ class App1(val props: JSPropsApp[Any]) extends Component[JSPropsApp[Any], JSStat
         <li><Link to="/fieldNormalizingForm" activeStyle={ red }>Redux-Form : fieldNormalizingForm</Link></li>
         <li><Link to="/fieldArraysForm" activeStyle={ red }>Redux-Form : fieldArrayForm</Link></li>
         <li><Link to="/wizardForm" activeStyle={ red }>Redux-Form : wizardForm</Link></li>
-        <li><Link to="/friends" activeStyle={ red }>Application Friends</Link></li>
-        <li><Link to="/repos" activeStyle={ red }>Repos</Link></li>
-      </ul>
+ 				<li><Link to="/griddle" activeStyle={ red }>Griddle</Link></li>
+        </ul>
       { this.props.children }
     </div>
 

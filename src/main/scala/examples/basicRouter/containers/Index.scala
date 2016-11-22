@@ -34,8 +34,7 @@ import scala.scalajs.js.annotation.JSExportAll
 import com.glipka.easyReactJS.reactRouter.ReactRouter._
 import com.glipka.easyReactJS.reactRouter._
 import com.glipka.easyReactJS.react.xml.XmlToCreatElement
- 
- 
+
 import examples.basicRouter.store._
 import examples.basicRouter.redux.components._
 import com.glipka.easyReactJS.reduxForm._
@@ -63,8 +62,8 @@ object Index extends JSApp {
 
     // la fonction connect passe la valeur du store dans les props ainis que la fonction dispatch
     // attention à ce que l'objet connecté (friendlist commence par une minuscule et non une majuscule sinon la macro génère js.constructorOf du composant
-     // pour les reduxForm, il ne faut pas d'objet connect
-      val submitValidationForm = reduxForm(js.Dynamic.literal("form" -> "submitValidation"))(js.constructorOf[SubmitValidationForm])
+    // pour les reduxForm, il ne faut pas d'objet connect
+    val submitValidationForm = reduxForm(js.Dynamic.literal("form" -> "submitValidation"))(js.constructorOf[SubmitValidationForm])
     val syncValidationForm = reduxForm(js.Dynamic.literal("form" -> "syncValidation", "validate" -> ValidateSubmit.validate, "warn" -> ValidateSubmit.warn))(js.constructorOf[SyncValidationForm])
     val asyncValidateForm = reduxForm(js.Dynamic.literal("form" -> "AsyncValidation", "validate" -> ValidateAsyncSubmit.validate, "asyncValidate" -> ValidateAsyncSubmit.asyncValidate, "asyncBlurFields" -> js.Array("username")))(js.constructorOf[AsyncValidateForm])
     var initializeFromStateForm0 = reduxForm(js.Dynamic.literal("form" -> "initializeFromStateForm"))(js.constructorOf[InitializeFromStateForm])
@@ -91,23 +90,51 @@ object Index extends JSApp {
 
       }, null, null)(selectingFormValuesForm1)
 
-   
     @XmlToCreatElement(true)
-    val provider = <Provider store={ store }>
-                     <Router history={ browserHistory }>
-                       <Route path="/submitValidationForm" component={ submitValidationForm }/>
-                       <Route path="/syncValidationForm" component={ syncValidationForm }/>
-                       <Route path="/asyncValidateForm" component={ asyncValidateForm }/>
-                       <Route path="/initializeFromStateForm" component={ initializeFromStateForm }/>
-                       <Route path="/fieldNormalizingForm" component={ fieldNormalizingForm }/>
-                       <Route path="/wizardForm" component={ WizardForm }/>
-                       <Route path="/fieldArraysForm" component={ fieldArraysForm }/>
-                       <Route path="/selectingFormValuesForm" component={ selectingFormValuesForm2 }/>
-                     </Router>
-                   </Provider>
-    ReactDOM.render(provider, document.getElementById("content"));
+    val home: js.Function = () => {
+      <div>
+        <h2>Page Principale</h2>
+      </div>
+    }
+    val red = js.Dynamic.literal("color" -> "red")
+    @XmlToCreatElement(true)
+    val provider2 = <Provider store={ store }>
+                      <BrowserRouter>
+                        <div>
+                          <div>
+                            <h1>*** samples Redux Form ***</h1>
+                            <ul role="nav">
+                               <li><Link to="/submitValidationForm" activeStyle={ red }>Redux-Form : submitValidationForm</Link></li>
+                              <li><Link to="/syncValidationForm" activeStyle={ red }>Redux-Form : syncValidationForm</Link></li>
+                              <li><Link to="/asyncValidateForm" activeStyle={ red }>Redux-Form : AsyncValidateForm</Link></li>
+                              <li><Link to="/initializeFromStateForm" activeStyle={ red }>Redux-Form : initializeFromStateForm</Link></li>
+                              <li><Link to="/selectingFormValuesForm" activeStyle={ red }>Redux-Form : selectingFormValuesForm</Link></li>
+                              <li><Link to="/fieldNormalizingForm" activeStyle={ red }>Redux-Form : fieldNormalizingForm</Link></li>
+                              <li><Link to="/fieldArraysForm" activeStyle={ red }>Redux-Form : fieldArrayForm</Link></li>
+                              <li><Link to="/wizardForm" activeStyle={ red }>Redux-Form : wizardForm</Link></li>
+                              <li><Link to="/griddle" activeStyle={ red }>Griddle</Link></li>
+                            </ul>
+                            <hr/>
+                          </div>
+                          <div>
+                            <Match exactly={ true } pattern="/" component={ home }/>
+                            <Match pattern="/submitValidationForm" component={ submitValidationForm }/>
+                            <Match pattern="/syncValidationForm" component={ syncValidationForm }/>
+                            <Match pattern="/asyncValidateForm" component={ asyncValidateForm }/>
+                            <Match pattern="/initializeFromStateForm" component={ initializeFromStateForm }/>
+                            <Match pattern="/fieldNormalizingForm" component={ fieldNormalizingForm }/>
+                            <Match pattern="/wizardForm" component={ WizardForm }/>
+                            <Match pattern="/fieldArraysForm" component={ fieldArraysForm }/>
+                            <Match pattern="/selectingFormValuesForm" component={ selectingFormValuesForm2 }/>
+                            <Match pattern="/griddle" component={ Griddle1 }/>
+                          </div>
+                        </div>
+                      </BrowserRouter>
+                    </Provider>
+
+    ReactDOM.render(provider2, document.getElementById("content"));
 
   }
 
 } 
- 
+

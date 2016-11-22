@@ -1,9 +1,4 @@
- 
-
 lazy val root = (project in file(".")).enablePlugins(ScalaJSPlugin,SbtWeb)
- 
- 
-
 name := "easyReactWithScalaJSSample1"
 version := "0.1-SNAPSHOT"
 scalaVersion := "2.11.8"
@@ -21,9 +16,12 @@ val redux = "org.webjars.npm" % "redux" % "3.6.0" / "redux.js" minified "redux.m
 val reduxForm ="org.webjars.npm" % "redux-form" % "6.2.0" / "redux-form.js"   minified "redux-form.min.js"  dependsOn ("react-redux.js") // 6.0.5
 val reactBootstrap ="org.webjars.npm" % "react-bootstrap" % "0.30.6" / "react-bootstrap.js" minified "react-bootstrap.min.js" dependsOn  ("dist/react-with-addons.js","react-dom.js")
 //val reactRouterBootstrapxxxxx= "org.webjars.npm" % "react-router-bootstrap" % "0.23.1" / "ReactRouterBootstrap.js"  minified "ReactRouterBootstrap.min.js" dependsOn "ReactRouter.js"
-val reactRouter= "org.webjars.npm" % "react-router" % "4.0.0-2" / "ReactRouter.js"  minified "ReactRouter.min.js" dependsOn ("dist/react-with-addons.js","react-dom.js")
+// react-router" % "4.0.0-2" 2.8.1
+val reactRouter= "org.webjars.npm" % "react-router" % "4.0.0-alpha.6" / "react-router.js"  minified "react-router.min.js" dependsOn ("dist/react-with-addons.js","react-dom.js")
+//val reactRouter= "org.webjars.npm" % "react-router" % "4.0.0-alpha.6" / "ReactRouter.js"  minified "ReactRouter.min.js" dependsOn ("dist/react-with-addons.js","react-dom.js")
+//val reactRouter= "org.webjars.npm" % "react-router" % "3.0.0" / "ReactRouter.js"  minified "ReactRouter.min.js" dependsOn ("dist/react-with-addons.js","react-dom.js")
 val reactDom= "org.webjars.npm" % "react-dom" % "15.3.2" / "react-dom.js"         commonJSName "ReactDOM" minified "react-dom.min.js"   dependsOn "dist/react-with-addons.js"
-
+val griddle="org.webjars.npm" % "griddle-react" % "0.7.0" / "Griddle.js"   
 
 unmanagedBase <<= baseDirectory { base => base / "libs" }
 
@@ -59,7 +57,7 @@ jsManifestFilter := {
  
  // 
 jsDependencies ++= Seq(
-immutable,redux,reactjs,reactDom,reactRouter,reactBootstrap,reactRedux ,reduxForm    
+immutable,redux,reactjs,reactDom,reactRouter,reactBootstrap,reactRedux ,reduxForm,griddle    
 )
 
  //persistLauncher in Compile := true
